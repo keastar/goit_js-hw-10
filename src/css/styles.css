@@ -18,3 +18,33 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+/* .mini {
+  font-size: medium;
+  display: inline-block;
+    vertical-align: middle;
+  /* display: flex; */
+/* } */ 
+/* img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+p {
+  font-size: small;
+/* } */ 
+
+ul {
+  margin-left: 0;
+  /* Отступ слева в браузере IE и Opera */
+  padding-left: 0;
+  /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+li {
+  /* display: flex;
+  vertical-align: center; */
+  list-style-type: none;
+  /* Убираем маркеры */
+}
+
