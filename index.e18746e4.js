@@ -1,2 +1,0 @@
-const e=[{label:"HTML"},{label:"CSS"},{label:"JavaScript"},{label:"Node.js"},{label:"React"},{label:"Vue"},{label:"JAVA"},{label:"Pyton"}],l={inputEl:document.querySelector("#search-box"),ulEl:document.querySelector(".country-list"),divEl:document.querySelector(".country-info")};l.inputEl.addEventListener("input",(function(l){const o=l.target.value.toLowerCase(),a=e.filter((e=>e.label.toLowerCase().includes(o)));n(t(a))}));function t(e){return e.map((e=>`<li>${e.label}</li>`)).join("")}function n(e){l.ulEl.innerHTML=e}n(t(e));
-//# sourceMappingURL=index.e18746e4.js.map
