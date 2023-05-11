@@ -1,4 +1,4 @@
-import throttle from 'lodash.throttle';
+import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
 import './css/styles.css';
 import { Notify } from 'notiflix';
@@ -14,21 +14,20 @@ const refs = {
 const DEBOUNCE_DELAY = 300;
 
 // прослушиватель на событие input по поиску страны
-refs.inputEl.addEventListener('input', throttle(onSearch, DEBOUNCE_DELAY));
+refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 // описание ф-ции поиска страны по событию набора в поле input названия страны
 function onSearch(event) {
   event.preventDefault;
 
   // определяем переменную, которая является динамическим значением из поля input
-  let searchQuery = '';
-  searchQuery = event.target.value;
+  const searchQuery = event.target.value.trim();
   console.log(searchQuery);
 
   refs.ulEl.innerHTML = '';
   refs.divEl.innerHTML = '';
 
-  if (searchQuery.length === 0) return;
+  if (!searchQuery) return;
   // вызываем ф-цию запроса на API с предлагаемой динамической переменной
   fetchCountries(searchQuery)
     // промис успеха - разметка с инфо по выбираемой стране
